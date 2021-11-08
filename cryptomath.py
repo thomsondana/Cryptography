@@ -35,3 +35,14 @@ def mod_inverse(alpha, mod):
         return -1
     else:
         return x % mod
+
+def primitive_roots():
+    p = int(input("Enter a prime number: "))
+    g = set()
+    for i in range(1, p):
+        h = set()
+        for j in range(1, p):
+            h.add(pow(i, j, p))
+        if len(h) == p - 1:
+            g.add(i)
+    print('\n', sorted(g), '\n')
